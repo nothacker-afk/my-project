@@ -1,0 +1,63 @@
+.search-bar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.search-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  background: white;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.search-form input {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.search-btn {
+  padding: 12px 30px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+}
