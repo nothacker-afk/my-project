@@ -20,7 +20,9 @@ const connectDB = async () => {
     console.log('MongoDB connected successfully');
   } catch (error) {
     console.error('MongoDB connection error:', error);
-    process.exit(1);
+    console.log('Will retry MongoDB connection in 5 seconds. The server will continue running without DB.');
+    // Retry connecting after a delay so the server stays up when DB is unavailable
+    setTimeout(connectDB, 5000);
   }
 };
 
