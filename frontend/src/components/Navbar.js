@@ -22,6 +22,9 @@ const Navbar = () => {
           <Link to="/" className="nav-link">
             Home
           </Link>
+          <Link to="/polls" className="nav-link">
+            Polls
+          </Link>
           {user ? (
             <>
               <Link to="/bookings" className="nav-link">

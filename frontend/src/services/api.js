@@ -51,3 +51,16 @@ export const userAPI = {
     headers: { Authorization: `Bearer ${getToken()}` }
   }),
 };
+
+// Poll API
+export const pollAPI = {
+  list: () => axios.get(`${API_BASE_URL}/polls`),
+  create: (data) => axios.post(`${API_BASE_URL}/polls`, data),
+  get: (id) => axios.get(`${API_BASE_URL}/polls/${id}`),
+  vote: (id, payload) => axios.post(`${API_BASE_URL}/polls/${id}/vote`, payload),
+};
+
+// Google auth helpers
+export const googleAuth = {
+  getUrl: () => axios.get(`${API_BASE_URL}/auth/google/url`),
+};

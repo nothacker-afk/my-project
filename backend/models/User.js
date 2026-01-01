@@ -23,6 +23,11 @@ const userSchema = new mongoose.Schema({
     select: false,
   },
   phone: String,
+  google: {
+    accessToken: String,
+    refreshToken: String,
+    tokenExpiry: Date,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

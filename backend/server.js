@@ -13,6 +13,15 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Sessions (simple server-side session to remember authenticated users)
+const session = require('express-session');
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'dev-secret',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false },
+}));
+
 // MongoDB Connection
 const connectDB = async () => {
   try {
@@ -34,6 +43,12 @@ app.use('/api/flights', require('./routes/flights'));
 app.use('/api/hotels', require('./routes/hotels'));
 app.use('/api/bookings', require('./routes/bookings'));
 app.use('/api/users', require('./routes/users'));
+// Poll routes
+app.use('/api/polls', require('./routes/polls'));
+// Google OAuth & Calendar routes
+app.use('/api/auth/google', require('./routes/google'));
+app.use('/api/polls', require('./routes/polls'));
+app.use('/auth/google', require('./routes/googleAuth'));
 
 // Health check
 app.get('/api/health', (req, res) => {
