@@ -7,6 +7,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Bookings from './pages/Bookings';
 import Checkout from './pages/Checkout';
+import Polls from './pages/Polls';
+import PollCreate from './pages/PollCreate';
+import PollDetail from './pages/PollDetail';
 import './App.css';
 
 const PrivateRoute = ({ children }) => {
@@ -35,6 +38,9 @@ function App() {
                 </PrivateRoute>
               }
             />
+            <Route path="/polls" element={<Polls />} />
+            <Route path="/polls/create" element={<PollCreate />} />
+            <Route path="/polls/:id" element={<PollDetail />} />
             <Route
               path="/booking/flight"
               element={
